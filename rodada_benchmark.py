@@ -123,7 +123,7 @@ SETORES_LEILAO = [
 SETORES_REGULADOS = ["D - Eletricidade e gás"]
 
 CONFIG_ABM = {
-    "usar_demografia_empresas": True,
+    "usar_demografia_empresas": False,
     "numero_firmas_industria": 20,
     "numero_firmas_leilao": 20,
     "numero_firmas_por_setor": {SETOR_FINANCEIRO: 1},
@@ -219,7 +219,15 @@ tabela_setores.index.name = "setor"
 print("\nTABELA MACROECONÔMICA")
 print(tabela_macro.to_string(index=False))
 print("\nTABELA SETORIAL — ÚLTIMO PERÍODO")
-print(tabela_setores.to_string())
+print(
+    "Tabela completa disponível em `tabela_setores` no painel Variables/Data Explorer."
+)
+print(
+    tabela_setores.iloc[:, :8].to_string(
+        max_rows=25,
+        max_cols=8,
+    )
+)
 print("\nGráficos disponíveis na aba Plots.")
 
 # Em uma sessão interativa, o Positron também renderiza as tabelas abaixo.
