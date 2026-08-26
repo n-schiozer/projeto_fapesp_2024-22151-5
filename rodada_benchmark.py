@@ -1,5 +1,16 @@
 """Roda o benchmark calibrado e mostra gráficos e tabelas no Positron."""
 
+from pathlib import Path
+import sys
+
+
+# Em IDEs que mantêm outros projetos no ``sys.path`` (por exemplo, Spyder e
+# Positron), prioriza explicitamente esta cópia do repositório.
+PASTA_PROJETO = Path(__file__).resolve().parent
+if str(PASTA_PROJETO) in sys.path:
+    sys.path.remove(str(PASTA_PROJETO))
+sys.path.insert(0, str(PASTA_PROJETO))
+
 import matplotlib.pyplot as plt
 import pandas as pd
 try:
