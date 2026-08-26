@@ -1,5 +1,7 @@
 # SFC–IO–ABM Brasil
 
+O modelo disponibilizado neste repositório foi desenvolvido no âmbito da pesquisa “Modelos Baseados em Agentes e Inteligência Artificial: Uma Abordagem para Análise dos Impactos Socioeconômicos das Mudanças Climáticas”, realizada pelo bolsista Nikolas Alexander van de Bilt Schiozer, sob supervisão de Rosângela Ballini, entre março de 2025 e julho de 2026. A pesquisa recebeu financiamento da Fundação de Amparo à Pesquisa do Estado de São Paulo — FAPESP, por meio do processo nº 2024/22151-5, na modalidade Bolsa Concedida como Item Orçamentário em Auxílio, vinculada ao Projeto FAPESP nº 2020/09838-0.
+
 Modelo macroeconômico multissetorial para o Brasil que combina três camadas:
 
 - **SFC (stock-flow consistent):** estoques e fluxos dos setores institucionais;
