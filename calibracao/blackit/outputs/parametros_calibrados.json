@@ -1,0 +1,41 @@
+{
+  "modo": "principal",
+  "parametros": {
+    "taxa_crescimento_populacional": 0.0038,
+    "taxa_crescimento_demanda_autonoma": 0.028500000000000043,
+    "a1": 0.44999999999999996,
+    "a3": 0.45000000000000007,
+    "velocidade_ajuste_expectativa_demanda": 0.9800000000000002,
+    "lambda_expectativa_precos": 0.75,
+    "velocidade_ajuste_estoques_firmas": 0.45,
+    "gamma_investimento_capacidade": 0.96,
+    "gamma_investimento_retorno": 0.07,
+    "eta_preco_padrao": -2.400000000000002,
+    "eta_qualidade_padrao": 0.49999999999999994,
+    "parametro_markup": 0.19,
+    "rho_qualidade": 0.44,
+    "sigma_qualidade": 0.11,
+    "rho_produtividade_idiossincratica": 0.42,
+    "sigma_produtividade_idiossincratica": 0.049999999999999996
+  },
+  "loss": 2.0195996445852886,
+  "script_input_blackit": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\laboratorio_abm_regulacao_preco_medio_demografia.py",
+  "contrato_theta": [
+    "taxa_crescimento_populacional",
+    "taxa_crescimento_demanda_autonoma",
+    "a1",
+    "a3",
+    "velocidade_ajuste_expectativa_demanda",
+    "lambda_expectativa_precos",
+    "velocidade_ajuste_estoques_firmas",
+    "gamma_investimento_capacidade",
+    "gamma_investimento_retorno",
+    "eta_preco_padrao",
+    "eta_qualidade_padrao",
+    "parametro_markup",
+    "rho_qualidade",
+    "sigma_qualidade",
+    "rho_produtividade_idiossincratica",
+    "sigma_produtividade_idiossincratica"
+  ]
+}

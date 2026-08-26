@@ -1,0 +1,1 @@
+"""Diagnósticos e scripts auxiliares."""

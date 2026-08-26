@@ -1,0 +1,16 @@
+moment_id,empirical_series_id,model_variable,transformation,use,status,notes
+inflacao_mensal_momentos,ipca_mensal,inflacao,Variação mensal percentual,calibration,ready,Comparar a inflação mensal se a frequência de simulação for mensal.
+inflacao_trimestral_momentos,inflacao_trimestral,inflacao,Composição geométrica de três meses,calibration,ready,Para comparação trimestral agregar a inflação simulada pela mesma fórmula.
+inflacao_anualizada_momentos,inflacao_anualizada_trimestral,inflacao,Anualização da inflação trimestral,descriptive,ready,Diagnóstico complementar; não usar como alvo adicional sem decisão metodológica.
+inflacao_anual_momentos,inflacao_anual,inflacao,Composição geométrica das doze taxas mensais,calibration,ready,Alvo anual comparável à inflação acumulada em doze períodos mensais.
+pib_real_nivel,pib_real_indice_sa,pib_real,Índice publicado pelo IBGE,validation,model_missing,O modelo em cenários tem PIB real mas o histórico canônico ainda não o registra de modo estável.
+pib_real_crescimento,crescimento_pib_real_qoq,pib_real,Variação percentual trimestre contra trimestre,validation,model_missing,Construir/adotar série comparável antes de validar.
+pib_real_crescimento_anual,crescimento_pib_real_anual,pib_real,Variação percentual do índice anual contra o ano anterior,validation,ready,Alvo anual para os momentos do crescimento do PIB real.
+desemprego_anual_momentos,taxa_desemprego_anual,taxa_desemprego,Taxa anual publicada pela PNAD Contínua,validation,ready,Conceito oficial anual para pessoas de 14 anos ou mais.
+emprego_momento,emprego,emprego,A definir após escolha da série,validation,candidate,Escolher pessoas ocupadas ou horas trabalhadas.
+consumo_real_momento,consumo_real,consumo_real,A definir após escolha da tabela,validation,data_missing,Falta a extração da série de CNT.
+fbcf_real_momento,fbcf_real,fbcf_nf_real,A definir após escolha da tabela,validation,data_missing,Falta a extração da série de CNT.
+va_setorial_momento,va_setorial,valor_adicionado_setorial,Concordância setorial pendente,calibration,needs_mapping,Depende de tabela IBGE-TRU-ABM.
+producao_agro_momento,agro_producao,producao_agro,Agregação por produto pendente,validation,candidate,Depende da regra de ponderação.
+geracao_eletrica_momento,geracao_eletrica,geracao_eletrica,Agregação por fonte pendente,validation,candidate,Modelo ainda não expõe a contraparte.
+choque_climatico_momento,precipitacao,precipitacao,Agregação espacial pendente,descriptive,candidate,Variável exógena candidata.

@@ -1,0 +1,12 @@
+moment_id,variable,moment,value,scale,n_obs,period,unit
+inflacao__mean,inflacao,mean,0.05852960612607257,0.0209340045913226,10,2010-2019,fraction
+inflacao__std,inflacao,std,0.0209340045913226,0.0209340045913226,10,2010-2019,fraction
+inflacao__acf1,inflacao,acf1,0.34023893089397383,1.0,10,2010-2019,fraction
+crescimento_pib_real__mean,crescimento_pib_real,mean,0.014485440999055688,0.032943985517927626,10,2010-2019,fraction
+crescimento_pib_real__std,crescimento_pib_real,std,0.032943985517927626,0.032943985517927626,10,2010-2019,fraction
+crescimento_pib_real__acf1,crescimento_pib_real,acf1,0.5906504306847934,1.0,10,2010-2019,fraction
+taxa_desemprego__mean,taxa_desemprego,mean,0.098375,0.024207068035124426,8,2012-2019,fraction
+taxa_desemprego__std,taxa_desemprego,std,0.024207068035124426,0.024207068035124426,8,2012-2019,fraction
+taxa_desemprego__acf1,taxa_desemprego,acf1,0.865349199995868,1.0,8,2012-2019,fraction
+crescimento_populacao__mean,crescimento_populacao,mean,0.011150169015873346,0.0104503413038634,8,2012-2019,fraction
+inflacao_desemprego_defasado__corr,inflacao_desemprego_defasado,corr_pi_t_u_t_1,-0.8016014296423983,1.0,7,2013-2019,correlation

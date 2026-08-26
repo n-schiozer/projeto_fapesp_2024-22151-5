@@ -1,0 +1,16 @@
+# Ambientes e cache Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Arquivos locais e temporários
+.env
+.DS_Store
+Thumbs.db
+~$*.xlsx
+
+# Resultados criados em novas execuções (os resultados publicados já existentes
+# são mantidos no repositório)
+outputs/monte_carlo/

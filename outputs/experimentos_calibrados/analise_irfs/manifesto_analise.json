@@ -1,0 +1,38 @@
+{
+  "pasta_resultados": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados",
+  "periodo_choque": 5,
+  "periodo_final": 25,
+  "horizontes": {
+    "impacto": 5,
+    "+1": 6,
+    "+5": 10,
+    "+10": 15,
+    "final": 25
+  },
+  "numero_simulacoes_por_cenario": 100,
+  "arquivos": {
+    "estatisticas_detalhadas": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\estatisticas_irf_detalhadas.csv",
+    "horizontes": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\irfs_horizontes.csv",
+    "resumo_cenarios": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\resumo_cenarios.csv",
+    "comparacao_duracoes": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\comparacao_temporario_permanente.csv",
+    "dose_resposta": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\dose_resposta.csv",
+    "diagnostico_pre_choque": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\diagnostico_pre_choque.csv",
+    "relatorio": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\relatorio_analise.md",
+    "manifesto": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\manifesto_analise.json",
+    "irf_pib_real": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\irf_pib_real.png",
+    "irf_taxa_desemprego": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\irf_taxa_desemprego.png",
+    "irf_inflacao": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\irf_inflacao.png",
+    "irf_deficit_governo": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\irf_deficit_governo.png",
+    "irf_deficit_externo": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\irf_deficit_externo.png",
+    "dose_resposta_pib_real": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\dose_resposta_pib_real.png",
+    "dose_resposta_taxa_desemprego": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\dose_resposta_taxa_desemprego.png",
+    "dose_resposta_inflacao": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\dose_resposta_inflacao.png",
+    "dose_resposta_deficit_governo": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\dose_resposta_deficit_governo.png",
+    "dose_resposta_deficit_externo": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\dose_resposta_deficit_externo.png",
+    "efeito_acumulado_pib_real": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\efeito_acumulado_pib_real.png",
+    "efeito_acumulado_taxa_desemprego": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\efeito_acumulado_taxa_desemprego.png",
+    "efeito_acumulado_inflacao": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\efeito_acumulado_inflacao.png",
+    "efeito_acumulado_deficit_governo": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\efeito_acumulado_deficit_governo.png",
+    "efeito_acumulado_deficit_externo": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\outputs\\experimentos_calibrados\\analise_irfs\\graficos_individuais\\efeito_acumulado_deficit_externo.png"
+  }
+}

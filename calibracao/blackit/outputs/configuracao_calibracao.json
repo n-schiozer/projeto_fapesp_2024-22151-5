@@ -1,0 +1,202 @@
+{
+  "modo_executado": "principal",
+  "periodos": 15,
+  "script_input_blackit": "C:\\Users\\Pichau\\Documents\\Codex\\2026-07-15\\crie-uma-tarefa-agendada-chamada-resumo\\outputs\\ABM BRASIL\\modelo_sfc_io_abm_brasil\\laboratorio_abm_regulacao_preco_medio_demografia.py",
+  "funcao_carregamento_input": "calibracao.blackit.executar.carregar_base_modelo",
+  "demografia_empresas_ativa": true,
+  "mc_smoke": 2,
+  "mc_principal": 5,
+  "batch_size": 8,
+  "n_batches": 20,
+  "ensemble_size_blackit": 1,
+  "n_jobs_blackit": 1,
+  "execucao_mc_calibracao": "sequencial dentro de cada candidato",
+  "execucao_experimentos": "ProcessPoolExecutor com contexto spawn",
+  "seeds_calibracao": [
+    1301,
+    1302,
+    1303,
+    1304,
+    1305
+  ],
+  "seed_base_trajetorias": 42,
+  "numero_mc_validacao_pronto_nao_executado": 100,
+  "theta": [
+    {
+      "nome": "taxa_crescimento_populacional",
+      "atual": 0.0,
+      "lower": 0.0,
+      "upper": 0.02,
+      "precision": 0.0001,
+      "destino": "CONFIG",
+      "equacao": "N_t = N_(t-1) * (1 + g_N)",
+      "interpretacao": "crescimento exógeno da população"
+    },
+    {
+      "nome": "taxa_crescimento_demanda_autonoma",
+      "atual": 0.0,
+      "lower": -0.02,
+      "upper": 0.06,
+      "precision": 0.0005,
+      "destino": "CONFIG",
+      "equacao": "A_real,t = A_real,0 * (1 + g_A)^t, A em {G,I,X}",
+      "interpretacao": "tendência real comum da demanda autônoma"
+    },
+    {
+      "nome": "a1",
+      "atual": 0.2,
+      "lower": 0.02,
+      "upper": 0.6,
+      "precision": 0.01,
+      "destino": "CONFIG",
+      "equacao": "dw = a0 + a1 * ((u_base/u)^a3 - 1)",
+      "interpretacao": "intensidade da resposta salarial ao desemprego"
+    },
+    {
+      "nome": "a3",
+      "atual": 0.2,
+      "lower": 0.05,
+      "upper": 1.0,
+      "precision": 0.01,
+      "destino": "CONFIG",
+      "equacao": "dw = a0 + a1 * ((u_base/u)^a3 - 1)",
+      "interpretacao": "curvatura da resposta salarial ao desemprego"
+    },
+    {
+      "nome": "velocidade_ajuste_expectativa_demanda",
+      "atual": 0.5,
+      "lower": 0.05,
+      "upper": 1.0,
+      "precision": 0.01,
+      "destino": "CONFIG_ABM",
+      "equacao": "D_e,t = D_e,t-1 + beta_D * (D_t-1 - D_e,t-1)",
+      "interpretacao": "velocidade adaptativa da expectativa de demanda das firmas"
+    },
+    {
+      "nome": "lambda_expectativa_precos",
+      "atual": 1.0,
+      "lower": 0.0,
+      "upper": 1.5,
+      "precision": 0.05,
+      "destino": "CONFIG_ABM",
+      "equacao": "Pc_e,t = Pc_t-1 * (1 + lambda_P * inflacao_setorial_t-1)",
+      "interpretacao": "extrapolação da inflação setorial esperada"
+    },
+    {
+      "nome": "velocidade_ajuste_estoques_firmas",
+      "atual": 0.25,
+      "lower": 0.0,
+      "upper": 1.0,
+      "precision": 0.01,
+      "destino": "CONFIG_ABM",
+      "equacao": "DeltaE_desejado = gamma_E * (E_desejado - E)",
+      "interpretacao": "velocidade de correção dos estoques das firmas"
+    },
+    {
+      "nome": "gamma_investimento_capacidade",
+      "atual": 0.5,
+      "lower": 0.0,
+      "upper": 1.0,
+      "precision": 0.01,
+      "destino": "CONFIG_ABM",
+      "equacao": "I_liq = gamma_K * (K_desejado - K)",
+      "interpretacao": "ajuste do investimento industrial ao hiato de capacidade"
+    },
+    {
+      "nome": "gamma_investimento_retorno",
+      "atual": 0.5,
+      "lower": 0.0,
+      "upper": 1.0,
+      "precision": 0.01,
+      "destino": "CONFIG_ABM",
+      "equacao": "I_liq = gamma_R * K * r_ajustado_anterior",
+      "interpretacao": "resposta do investimento das firmas de leilão ao retorno"
+    },
+    {
+      "nome": "eta_preco_padrao",
+      "atual": -1.2,
+      "lower": -3.0,
+      "upper": -0.2,
+      "precision": 0.05,
+      "destino": "CONFIG_ABM",
+      "equacao": "atratividade proporcional ao preço relativo^eta_preco",
+      "interpretacao": "elasticidade-preço da alocação de demanda"
+    },
+    {
+      "nome": "eta_qualidade_padrao",
+      "atual": 2.0,
+      "lower": 0.25,
+      "upper": 4.0,
+      "precision": 0.05,
+      "destino": "CONFIG_ABM",
+      "equacao": "atratividade proporcional à qualidade^eta_qualidade",
+      "interpretacao": "elasticidade-qualidade da alocação de demanda"
+    },
+    {
+      "nome": "parametro_markup",
+      "atual": 0.1,
+      "lower": 0.0,
+      "upper": 0.5,
+      "precision": 0.01,
+      "destino": "CONFIG_ABM.parametros_markup",
+      "equacao": "mu_t = mu_(t-1) * (1 + gamma_mu * delta_market_share)",
+      "interpretacao": "velocidade comportamental de ajuste do markup"
+    },
+    {
+      "nome": "rho_qualidade",
+      "atual": 0.9,
+      "lower": 0.0,
+      "upper": 0.98,
+      "precision": 0.01,
+      "destino": "CONFIG_ABM",
+      "equacao": "z_q,t = rho_q * z_q,t-1 + epsilon_q,t",
+      "interpretacao": "persistência da qualidade idiossincrática das firmas"
+    },
+    {
+      "nome": "sigma_qualidade",
+      "atual": 0.02,
+      "lower": 0.005,
+      "upper": 0.15,
+      "precision": 0.005,
+      "destino": "CONFIG_ABM",
+      "equacao": "epsilon_q,t ~ N(0, sigma_q^2)",
+      "interpretacao": "volatilidade da qualidade idiossincrática das firmas"
+    },
+    {
+      "nome": "rho_produtividade_idiossincratica",
+      "atual": 0.9,
+      "lower": 0.0,
+      "upper": 0.98,
+      "precision": 0.01,
+      "destino": "CONFIG_ABM",
+      "equacao": "z_a,t = rho_a * z_a,t-1 + epsilon_a,t",
+      "interpretacao": "persistência da produtividade idiossincrática das firmas"
+    },
+    {
+      "nome": "sigma_produtividade_idiossincratica",
+      "atual": 0.02,
+      "lower": 0.005,
+      "upper": 0.15,
+      "precision": 0.005,
+      "destino": "CONFIG_ABM",
+      "equacao": "epsilon_a,t ~ N(0, sigma_a^2)",
+      "interpretacao": "volatilidade da produtividade idiossincrática das firmas"
+    }
+  ],
+  "momentos": [
+    "inflacao__mean",
+    "inflacao__std",
+    "inflacao__acf1",
+    "crescimento_pib_real__mean",
+    "crescimento_pib_real__std",
+    "crescimento_pib_real__acf1",
+    "taxa_desemprego__mean",
+    "taxa_desemprego__std",
+    "taxa_desemprego__acf1",
+    "crescimento_populacao__mean",
+    "inflacao_desemprego_defasado__corr"
+  ],
+  "choques_nivel_neutros": true,
+  "choques_climaticos_ativos": false,
+  "sensibilidade_local": "implementada para avaliação baixo/atual/alto; não executada no smoke"
+}

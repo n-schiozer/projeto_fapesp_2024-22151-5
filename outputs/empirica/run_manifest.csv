@@ -1,0 +1,5 @@
+artifact,path,rows
+model_targets,data\processed\empirica\model_targets.csv,1419
+macro_anual_brasil,data\processed\empirica\macro_anual_brasil.csv,46
+sector_parameters,data\processed\empirica\sector_parameters.csv,0
+empirical_moments,outputs\empirica\empirical_moments.csv,11
