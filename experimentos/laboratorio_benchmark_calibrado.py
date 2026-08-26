@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 from pathlib import Path
 import sys
 
@@ -22,6 +23,8 @@ from configuracao_projeto import (
 )
 from experimentos.monte_carlo_100 import (
     ARQUIVO_PARAMETROS_CALIBRADOS,
+    CONFIG,
+    CONFIG_ABM,
     carregar_configuracao_calibrada,
 )
 from experimentos.paralelizacao import extrair_historico_macro
@@ -108,8 +111,17 @@ def executar_laboratorio(
     periodos: int | None = None,
     arquivo_parametros: Path = ARQUIVO_PARAMETROS_CALIBRADOS,
     mostrar_graficos: bool = True,
+    config: dict | None = None,
+    config_abm: dict | None = None,
+    usar_parametros_calibrados: bool = True,
+    forcar_benchmark_sem_choque: bool = True,
 ) -> dict:
-    """Roda somente o benchmark calibrado e devolve objetos para inspecao."""
+    """Roda o modelo a partir de configurações editáveis e devolve resultados.
+
+    Por padrão, aplica os parâmetros estimados a ``config`` e ``config_abm``.
+    Com ``usar_parametros_calibrados=False``, executa exatamente as hipóteses
+    recebidas, útil para exploração manual no arquivo-base.
+    """
 
     if isinstance(seed, bool) or not isinstance(seed, int):
         raise ValueError("seed deve ser um inteiro.")
@@ -120,13 +132,22 @@ def executar_laboratorio(
     ):
         raise ValueError("periodos deve ser um inteiro positivo.")
 
-    config, config_abm, payload = carregar_configuracao_calibrada(
-        arquivo_parametros
-    )
+    config_base = deepcopy(CONFIG if config is None else config)
+    config_abm_base = deepcopy(CONFIG_ABM if config_abm is None else config_abm)
+    if usar_parametros_calibrados:
+        config, config_abm, payload = carregar_configuracao_calibrada(
+            arquivo_parametros,
+            config_base=config_base,
+            config_abm_base=config_abm_base,
+        )
+    else:
+        config, config_abm = config_base, config_abm_base
+        payload = {"modo": "configuracao_manual_sem_calibracao"}
     if periodos is not None:
         config["periodos"] = periodos
-        config["periodo_choque"] = min(config["periodo_choque"], periodos)
-    config_abm["choques_climaticos"]["ativo"] = False
+    config["periodo_choque"] = min(config["periodo_choque"], config["periodos"])
+    if forcar_benchmark_sem_choque:
+        config_abm["choques_climaticos"]["ativo"] = False
 
     data_dir, arquivo_cei = validar_caminhos_dados(DATA_DIR, ARQUIVO_CEI)
     condicoes_iniciais = preparar_condicoes_iniciais(

@@ -10,7 +10,7 @@ Este repositório é uma edição **enxuta e executável**. Ele preserva o códi
 
 ## Comece aqui
 
-O arquivo-base é [`rodada_benchmark.py`](rodada_benchmark.py). Ele executa uma trajetória calibrada do benchmark, imprime as tabelas macro e setorial e abre os gráficos.
+O arquivo-base é [`rodada_benchmark.py`](rodada_benchmark.py). Ele concentra, no topo do próprio arquivo, todos os controles da rodada e os dicionários completos `CONFIG` e `CONFIG_ABM`. Edite-os para alterar hipóteses macroeconômicas, firmas, mercados, demografia ou choques; o arquivo executa então uma trajetória, imprime as tabelas macro e setorial e abre os gráficos.
 
 ```powershell
 git clone <URL-DO-REPOSITORIO>
@@ -34,7 +34,7 @@ No macOS/Linux, ative o ambiente com `source .venv/bin/activate`. Se a política
 python rodada_benchmark.py
 ```
 
-O benchmark usa os parâmetros de `calibracao/blackit/outputs/parametros_calibrados.json`, os dados incluídos em `data/` e 25 períodos. Os gráficos aparecem em uma janela do Matplotlib; as tabelas também são impressas no terminal.
+Por padrão, o benchmark usa os parâmetros de `calibracao/blackit/outputs/parametros_calibrados.json`, os dados incluídos em `data/` e 25 períodos. Os gráficos aparecem em uma janela do Matplotlib; as tabelas também são impressas no terminal. Para executar literalmente os valores editados — inclusive os parâmetros que normalmente seriam substituídos pela calibração — mude `USAR_PARAMETROS_CALIBRADOS` para `False` no início de `rodada_benchmark.py`.
 
 Para controlar semente ou horizonte diretamente:
 

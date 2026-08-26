@@ -195,8 +195,16 @@ CONFIG_ABM = {
 
 def carregar_configuracao_calibrada(
     arquivo: Path = ARQUIVO_PARAMETROS_CALIBRADOS,
+    *,
+    config_base: dict | None = None,
+    config_abm_base: dict | None = None,
 ) -> tuple[dict, dict, dict]:
-    """Carrega theta*, valida seu contrato e devolve configurações novas."""
+    """Aplica theta* sobre as configurações-base e devolve cópias novas.
+
+    ``config_base`` e ``config_abm_base`` permitem que o arquivo-base do
+    benchmark exponha todas as hipóteses ao usuário, sem perder os parâmetros
+    estimados da calibração.
+    """
 
     arquivo = Path(arquivo)
     if not arquivo.is_file():
@@ -206,7 +214,14 @@ def carregar_configuracao_calibrada(
     if not isinstance(parametros, dict):
         raise ValueError("parametros_calibrados.json não contém 'parametros'.")
 
-    especificacoes = especificacoes_parametros(CONFIG, CONFIG_ABM)
+    config_referencia = deepcopy(CONFIG if config_base is None else config_base)
+    config_abm_referencia = deepcopy(
+        CONFIG_ABM if config_abm_base is None else config_abm_base
+    )
+    especificacoes = especificacoes_parametros(
+        config_referencia,
+        config_abm_referencia,
+    )
     nomes = [item.nome for item in especificacoes]
     ausentes = [nome for nome in nomes if nome not in parametros]
     extras = sorted(set(parametros) - set(nomes))
@@ -216,13 +231,17 @@ def carregar_configuracao_calibrada(
         )
     theta = np.array([float(parametros[nome]) for nome in nomes], dtype=float)
     theta = np.asarray(
-        normalizar_theta(theta, CONFIG, CONFIG_ABM),
+        normalizar_theta(theta, config_referencia, config_abm_referencia),
         dtype=float,
     )
 
-    config, config_abm = aplicar_theta(theta, CONFIG, CONFIG_ABM)
-    # O horizonte experimental é uma decisão do experimento, não da busca.
-    config["periodos"] = CONFIG["periodos"]
+    config, config_abm = aplicar_theta(
+        theta,
+        config_referencia,
+        config_abm_referencia,
+    )
+    # O horizonte é uma decisão da rodada, não da busca de calibração.
+    config["periodos"] = config_referencia["periodos"]
     return config, config_abm, payload
 
 
